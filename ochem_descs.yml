@@ -1,0 +1,19 @@
+# ochem_descs.yml
+# usage: fastprop train ochem_descs.yml
+#
+# This calculates all the molecular features for OChem-Curated
+# but does not train a model.
+
+
+# generic args
+output_directory: output
+random_seed: 1701
+problem_type: regression
+
+# featurization
+input_file: ochem_test.csv
+target_columns: logS
+smiles_column: smiles
+descriptor_set: all
+
+number_epochs: 0
