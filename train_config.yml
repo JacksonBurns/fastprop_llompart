@@ -1,0 +1,39 @@
+# train_config.yml
+# usage: fastprop train train_config.yml
+#
+# This file contains the model settings to perform training
+# on the Llompart curated AqSolDBc dataset.
+#
+# The data can be downloaded from the repository given in the
+# corresponding paper:
+# https://entrepot.recherche.data.gouv.fr/dataset.xhtml?persistentId=doi:10.57745/CZVZIA
+#
+# Multiple models were benchmarked in that reference study, achieving best-case performance
+# of 0.56 R2 and 1.74 MSE (1.32 RMSE) on OChem-Curated
+
+
+# generic args
+output_directory: output
+random_seed: 1701
+problem_type: regression
+
+# featurization
+input_file: data/AqSolDBc.csv
+target_columns: ExperimentalLogS
+smiles_column: SmilesCurated
+descriptor_set: all
+
+# architecture - from optimization
+hidden_size: 2000
+fnn_layers: 3
+clamp_input: True
+
+# training
+number_repeats: 10
+number_epochs: 100
+batch_size: 1024
+patience: 15
+train_size: 0.8
+val_size: 0.1
+test_size: 0.1
+sampler: random
