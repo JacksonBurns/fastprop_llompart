@@ -27,7 +27,7 @@ def parity_plot(*, truth: str, prediction: str):
     ax.plot([-12, 2], [-12, 2], "r", linewidth=1)
     ax.plot([-12, 2], [-11, 3], "r--", linewidth=0.5)
     ax.plot([-12, 2], [-13, 1], "r--", linewidth=0.5)
-    ax.set_title(r"$\tt{fastsolv}$")
+    ax.set_title(r"$\tt{fastprop}$")
     ax.set_xlabel("Solubility (LogS)")
     ax.set_ylabel("cLogS")
     ax.set_xlim(-12, 2)
