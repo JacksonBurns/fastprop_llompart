@@ -18,7 +18,7 @@ random_seed: 1701
 problem_type: regression
 
 # featurization
-input_file: SolubilityCuration/CurationAqSolDB/AqSolDBc.csv
+input_file: data/AqSolDBc.csv
 target_columns: ExperimentalLogS
 smiles_column: SmilesCurated
 descriptor_set: all
@@ -26,6 +26,7 @@ descriptor_set: all
 # architecture - from optimization
 hidden_size: 2000
 fnn_layers: 3
+clamp_input: True
 
 # training
 number_repeats: 10
